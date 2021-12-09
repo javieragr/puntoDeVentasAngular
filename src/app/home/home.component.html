@@ -1,0 +1,63 @@
+<mat-sidenav-container fullscreen >
+    <mat-sidenav #sidenav mode="push" >
+        
+        
+        <mat-toolbar>
+            <span>Menu </span>
+            <span class="spacer" ></span>
+            <button mat-icon-button
+                (click)="sidenav.toggle()"> 
+                
+                <mat-icon> menu  </mat-icon>
+            </button>
+          
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./puntoDeVenta" mat-list-item  (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon >label</mat-icon>
+               <span>Punto de venta</span> 
+            </a>
+
+            <a routerLink="./categorias" mat-list-item  (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon >label</mat-icon>
+               <span>Categorias</span> 
+            </a>
+
+            <a routerLink="./productos" mat-list-item  (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon >label</mat-icon>
+               <span>Productos</span> 
+            </a>
+            <a routerLink="./sucursales" mat-list-item  (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon >label</mat-icon>
+               <span>Sucursales</span> 
+            </a>
+            <a routerLink="./unidades" mat-list-item  (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon >label</mat-icon>
+               <span>Unidades</span> 
+            </a>
+           
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar>
+
+        <button mat-icon-button
+            (click)="sidenav.toggle()"> 
+            <mat-icon> menu</mat-icon>
+        </button>
+        <span class="spacer" ></span>
+
+
+        
+    <!-- <span>{{auth.usuario}}</span>        
+            <button mat-button (click)="logout()">
+                Logout
+            </button> -->
+
+    </mat-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    
+</mat-sidenav-container>
