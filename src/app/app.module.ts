@@ -8,11 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     HomeComponent
   ],
   imports: [
@@ -20,8 +20,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSidenavModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

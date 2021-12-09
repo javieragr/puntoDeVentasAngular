@@ -8,6 +8,8 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
 import { UnidadesComponent } from './unidades/unidades.component';
 import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     CatalogosRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    MatSidenavModule
   ]
 })
 export class CatalogosModule { }

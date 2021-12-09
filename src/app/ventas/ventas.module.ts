@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { VentasRoutingModule } from './ventas-routing.module';
 import { PuntoDeVentaComponent } from './pages/punto-de-venta/punto-de-venta.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PuntoDeVentaComponent } from './pages/punto-de-venta/punto-de-venta.com
   ],
   imports: [
     CommonModule,
-    VentasRoutingModule
+    VentasRoutingModule,
+    FlexLayoutModule
   ]
 })
 export class VentasModule { }
