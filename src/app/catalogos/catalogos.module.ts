@@ -7,6 +7,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
 import { UnidadesComponent } from './unidades/unidades.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UnidadesComponent } from './unidades/unidades.component';
   ],
   imports: [
     CommonModule,
-    CatalogosRoutingModule
+    CatalogosRoutingModule,
+    MaterialModule
   ]
 })
 export class CatalogosModule { }
