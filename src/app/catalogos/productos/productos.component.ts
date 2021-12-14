@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { CatalogosService } from '../services/catalogos.service';
 
 @Component({
   selector: 'app-productos',
@@ -20,15 +22,27 @@ import { Component, OnInit } from '@angular/core';
       width: 50px;
       background-color: blue;
     }
-    `
+    `,
   ]
  
 })
-export class ProductosComponent implements OnInit {
+export class ProductosComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(private catalogoServices:CatalogosService) { }
+ 
+  
+ 
+  
+  cargaProductos(){
+      this.catalogoServices.getAllProductos().subscribe(resp=>{
+        console.log(resp);
+        
+      })
+    }
+  
+ 
 
 }
+
+  
+

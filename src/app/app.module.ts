@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
   
   providers: [],
