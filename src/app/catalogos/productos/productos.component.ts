@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CatalogosService } from '../services/catalogos.service';
+import { Producto } from '../../interfaces/Producto';
 
 @Component({
   selector: 'app-productos',
@@ -26,19 +27,38 @@ import { CatalogosService } from '../services/catalogos.service';
   ]
  
 })
-export class ProductosComponent  {
+export class ProductosComponent implements OnInit   {
 
   constructor(private catalogoServices:CatalogosService) { }
- 
-  
+  public productos:Producto[]=[];
+  public nuevo : Producto={nombre:'',clave:'',precio:0}
+   
+  ngOnInit() {
+    this.cargaProductos();
+
+  }
  
   
   cargaProductos(){
-      this.catalogoServices.getAllProductos().subscribe(resp=>{
-        console.log(resp);
-        
+     this.catalogoServices.getAllProductos().subscribe((val:any)=>{
+       this.productos=val.productos;
+     })
+    }
+    
+    addNew(){
+      
+      
+      
+      this.catalogoServices.addProduct(this.nuevo).subscribe((resp)=>{
+        if (resp) {
+          this.productos.push(this.nuevo);
+          console.log(this.nuevo);
+        }else{console.log('no se guardoo');
+        }
+
       })
     }
+
   
  
 

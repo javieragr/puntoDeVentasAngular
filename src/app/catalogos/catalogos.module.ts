@@ -10,6 +10,7 @@ import { UnidadesComponent } from './unidades/unidades.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     CatalogosRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule
   ]
 })
 export class CatalogosModule { }

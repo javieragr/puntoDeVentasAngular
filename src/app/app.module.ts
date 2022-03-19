@@ -10,6 +10,7 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import {HttpClientModule} from '@angular/common/http';
     MaterialModule,
     FlexLayoutModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  
   providers: [],
+  exports:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

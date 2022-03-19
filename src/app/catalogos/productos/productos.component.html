@@ -7,26 +7,35 @@
         <div fxLayout="column" class="form-container" fxLayoutAlign="space-around space-around" fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs='column' fxLayout.md='column'>
 
-                <div fxFlex="50" fxLayoutGap="20px" fxLayout="row">
+                <div fxFlex="100" fxLayoutGap="20px" fxLayout="row">
 
 
                     <mat-form-field fxLayoutGap="20px" fxFlex="10">
                         <mat-label>
                             Clave
                         </mat-label>
-                        <input matInput type="text" required>
+                        <input matInput [(ngModel)]="nuevo.clave" type="text" required>
                     </mat-form-field>
 
                     <mat-form-field fxFlex="30">
                         <mat-label>
                             Nombre
                         </mat-label>
-                        <input matInput type="text" required>
+                        <input matInput  [(ngModel)]="nuevo.nombre" type="text" required>
                     </mat-form-field>
+
+                    <mat-form-field fxFlex="15">
+                        <mat-label>
+                            Precio
+                        </mat-label>
+                        <input matInput  [(ngModel)]="nuevo.precio" type="text" required>
+                    </mat-form-field>
+                    <button class="btn btn-success" (click)="addNew()" >+</button>
+                    
                 </div>
 
             </div>
-            <app-catalogo-table></app-catalogo-table>
+            <app-catalogo-table [prods]="productos" ></app-catalogo-table>
         </div>
     </div>
 

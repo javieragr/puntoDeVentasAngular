@@ -1,0 +1,25 @@
+<h1>Listado</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let habilidad of items">
+                <td>{{habilidad.name}}</td>
+                <td>{{habilidad.url}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <section class="pagination">
+        <button [disabled]="isLoading" (click)="btnClick(0)" class="first-page-btn">First</button>
+        <button [disabled]="isLoading" (click)="btnClick(1)" class="first-page-btn">Previous</button>
+        <button [disabled]="isLoading" (click)="btnClick(2)" class="first-page-btn">Next</button>
+        <button [disabled]="isLoading" (click)="btnClick(3)" class="first-page-btn">Last</button>
+    </section>
+    pagina actual <pre>{{page|json}}</pre>
+
+</div>

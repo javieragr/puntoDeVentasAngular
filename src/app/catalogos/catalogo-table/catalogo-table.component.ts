@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Producto } from '../../interfaces/Producto';
 
  interface Catalogo {
   id: number;
@@ -23,11 +24,13 @@ export class CatalogoTableComponent implements OnInit {
 
   constructor() { }
 
+  @Input() prods: Producto[]=[];
   ngOnInit(): void {
+    
   }
   dataSource : Catalogo[]=[{id:1,clave:'01',nombre:'soda'},
    {id:2,clave:'02',nombre:'Agua natural'}
   ]
-  displayedColumns: string[] = ['clave', 'nombre'];
+  displayedColumns: string[] = ['clave', 'nombre','precio'];
 
 }
