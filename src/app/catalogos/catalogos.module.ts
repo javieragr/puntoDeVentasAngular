@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from './componentes/generic-table/generic-table.component';
+import { AutoCompleteClaveNombreComponent } from './componentes/auto-complete-clave-nombre/auto-complete-clave-nombre.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GenericTableComponent } from './componentes/generic-table/generic-table
     CategoriasComponent,
     SucursalesComponent,
     UnidadesComponent,
-    GenericTableComponent
+    GenericTableComponent,
+    AutoCompleteClaveNombreComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,26 @@
+<p>Autocomplete generico clave nombre/p>
+    <div fxLayout="column" >
+        <div>
+            <h1>tituloActucomplete</h1>
+            <mat-divider></mat-divider>
+        </div>
+        <div>
+            <h3>Buscador</h3>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>titulo autocomplete</mat-label>
+                <input type="text"
+                       placeholder="seleccione"
+                       aria-label="seleccione"
+                       matInput
+                       [(ngModel)]="termino"
+                       (input)="buscando()"
+                       [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption (optionSelected)="opcionSeleccionada($event)" #auto="matAutocomplete">
+                  <mat-option *ngFor="let item of items " [value]="item">
+                   {{item.clave}} {{item.nombre}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+        </div>
+    </div>
+
