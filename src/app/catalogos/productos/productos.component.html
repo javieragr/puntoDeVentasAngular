@@ -31,11 +31,12 @@
                         <input matInput  [(ngModel)]="nuevo.precio" type="text" required>
                     </mat-form-field>
                     <button class="btn btn-success" (click)="addNew()" >+</button>
+                    <button class="btn btn-success" (click)="clean()" >nuevo</button>
                     
                 </div>
 
             </div>
-            <app-catalogo-table [prods]="productos" ></app-catalogo-table>
+            <app-catalogo-table [prods]="productos" (onItemSelected)="itemSelected($event)" ></app-catalogo-table>
         </div>
     </div>
 

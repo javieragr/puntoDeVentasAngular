@@ -1,2 +1,55 @@
 <h1>Categorias</h1>
-<app-catalogo-table></app-catalogo-table>
+<div class="sidenav-container">
+    <mat-toolbar color="primary">
+        <span>Categorias</span>
+        
+    </mat-toolbar>
+    <div style="padding: 5px;">
+        <div fxLayout="column" class="form-container" fxLayoutAlign="space-around space-around" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs='column' fxLayout.md='column'>
+
+                <div fxFlex="100" fxLayoutGap="20px" fxLayout="row">
+
+
+                    <mat-form-field fxLayoutGap="20px" fxFlex="10">
+                        <mat-label>
+                            Clave
+                        </mat-label>
+                        <input matInput [(ngModel)]="nuevo.clave" type="text" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>
+                            Nombre
+                        </mat-label>
+                        <input matInput  [(ngModel)]="nuevo.nombre" type="text" required>
+                    </mat-form-field>
+
+                    
+                    <button class="btn btn-success" (click)="addNew()" >
+                        <mat-icon mat-list-icon>add</mat-icon>
+
+                    </button>
+                    <button class="btn btn-success" (click)="clean()" >
+                        <mat-icon>autorenew</mat-icon>
+                    </button>
+                    
+                </div>
+
+            </div>
+            <app-generic-table [items]="categorias" (onItemSelected)="itemSelected($event)" ></app-generic-table>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="outerContainer">
+    <div fxLayout="row" fxLayout.sm="column" fxLayoutGap="10px" class="container">
+        <div fxLayoutAlign="center center">1</div>
+        <div fxLayoutAlign="center center">2</div>
+        <div fxLayoutAlign="center center">3</div>
+        <div fxLayoutAlign="center center">4</div>
+    </div>
+</div>

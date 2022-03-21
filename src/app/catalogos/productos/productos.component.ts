@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { CatalogosService } from '../services/catalogos.service';
 import { Producto } from '../../interfaces/Producto';
+import { SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-productos',
@@ -29,7 +32,10 @@ import { Producto } from '../../interfaces/Producto';
 })
 export class ProductosComponent implements OnInit   {
 
-  constructor(private catalogoServices:CatalogosService) { }
+  constructor(private catalogoServices:CatalogosService,
+    public readonly swalTargets: SwalPortalTargets) { }
+
+
   public productos:Producto[]=[];
   public nuevo : Producto={nombre:'',clave:'',precio:0}
    
@@ -40,26 +46,49 @@ export class ProductosComponent implements OnInit   {
  
   
   cargaProductos(){
+    
      this.catalogoServices.getAllProductos().subscribe((val:any)=>{
        this.productos=val.productos;
      })
     }
-    
+
+
     addNew(){
       
-      
-      
       this.catalogoServices.addProduct(this.nuevo).subscribe((resp)=>{
-        if (resp) {
+        try {
+          Swal.fire({
+            icon: 'success',
+            title: 'Saved',
+            text: 'Product saved!',
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
           this.productos.push(this.nuevo);
           console.log(this.nuevo);
-        }else{console.log('no se guardoo');
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
         }
+          
+        
+          
+        
 
       })
     }
 
-  
+    itemSelected(event:Producto){
+
+      this.nuevo=event;
+    }
+    clean(){
+
+      this.nuevo={nombre:'',clave:'',precio:0}
+    }
  
 
 }

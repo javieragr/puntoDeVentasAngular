@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators'
 import { environment } from 'src/environments/environment.prod';
 import { Articulo } from 'src/app/interfaces/Articulo';
 import { Observable } from 'rxjs';
+import { Categoria } from '../../interfaces/Categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,15 @@ export class CatalogosService {
 
   }
   addProduct=(prod:Producto):Observable<Producto>=>{
-    return this.http.post<Producto>(`${this.url}/productos/agregarProducto`,prod);
+    return this.http.post<Producto>(`${this.url}/productos/agregarProducto`,prod)
+
+  }
+
+  getCategorias=():Observable<Categoria[]>=>{
+    return this.http.get<Categoria[]>(`${this.url}/categorias/getCategorias`);
+  }
+  addCategory=(cat:Categoria):Observable<Categoria>=>{
+    return this.http.post<Categoria>(`${this.url}/categorias/agregarCategoria`,cat)
 
   }
   

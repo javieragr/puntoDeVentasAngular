@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatRow } from '@angular/material/table';
+
 import { Producto } from '../../interfaces/Producto';
 
  interface Catalogo {
@@ -25,6 +27,7 @@ export class CatalogoTableComponent implements OnInit {
   constructor() { }
 
   @Input() prods: Producto[]=[];
+  @Output() onItemSelected:EventEmitter<Producto> = new EventEmitter()
   ngOnInit(): void {
     
   }
@@ -33,4 +36,10 @@ export class CatalogoTableComponent implements OnInit {
   ]
   displayedColumns: string[] = ['clave', 'nombre','precio'];
 
+  getRow(row:any){
+
+    console.log(row);
+    this.onItemSelected.emit(row)
+    
+  }
 }

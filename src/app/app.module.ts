@@ -11,6 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatSidenavModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module.forRoot()
+    
   ],
   providers: [],
   exports:[],

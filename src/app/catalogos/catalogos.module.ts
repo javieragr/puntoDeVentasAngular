@@ -11,6 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
+import { GenericTableComponent } from './componentes/generic-table/generic-table.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     ProductosComponent,
     CategoriasComponent,
     SucursalesComponent,
-    UnidadesComponent
+    UnidadesComponent,
+    GenericTableComponent
   ],
   imports: [
     CommonModule,
